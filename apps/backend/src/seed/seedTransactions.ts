@@ -4,7 +4,7 @@ import fs from "fs/promises";
 import path from "path";
 
 import { connectDB } from "../config/db";
-import { Transaction } from "../models/Transaction";
+import { Transaction } from "../models/transaction.model";
 
 async function seedTransactions() {
   try {
