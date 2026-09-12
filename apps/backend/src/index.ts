@@ -25,7 +25,7 @@ app.get("/health", (req, res) => {
 app.use("/api/v0/transactions", transRouter);
 app.use("/api/v0/auth", authRouter);
 
-app.use("/api/v0/analytics", analyticsRoute);
+app.use("/api/v1/analytics", analyticsRoute);
 
 
 const PORT = process.env.PORT || 5000;
