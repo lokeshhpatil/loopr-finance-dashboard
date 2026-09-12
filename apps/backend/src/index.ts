@@ -3,8 +3,11 @@ import cors from "cors"
 import cookieParser from "cookie-parser"
 import dotenv from "dotenv"
 import { connectDB } from "./config/db"
+
 import authRouter from "./routes/auth.routes";
 import transRouter from "./routes/transaction.routes"
+import analyticsRoute from "./routes/analytics.routes"
+
 dotenv.config()
 
 const app: Express = express();
@@ -21,6 +24,8 @@ app.get("/health", (req, res) => {
 
 app.use("/api/v0/transactions", transRouter);
 app.use("/api/v0/auth", authRouter);
+
+app.use("/api/v0/analytics", analyticsRoute);
 
 
 const PORT = process.env.PORT || 5000;
