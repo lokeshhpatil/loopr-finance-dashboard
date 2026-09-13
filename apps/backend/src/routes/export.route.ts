@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { getTransactions } from "../controllers/transactions.controller";
+import { exportTransactions } from "../controllers/export.controller";
 import { verifyJWTMidd } from "../middleware/auth.middleware";
 
 const router = Router();
 
 router.use(verifyJWTMidd);
-router.get("/", getTransactions);
+router.get("/transactions", exportTransactions);
 
 export default router;

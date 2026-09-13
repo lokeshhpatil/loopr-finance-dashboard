@@ -140,7 +140,6 @@ export const getTransactions = asyncHandler(
 
         Transaction.countDocuments(filter as any),
       ]);
-
       res.status(200).json({
         success: true,
         total,
@@ -151,7 +150,6 @@ export const getTransactions = asyncHandler(
       });
     } catch (error) {
       console.error(error);
-
       res.status(500).json({
         success: false,
         message: "Server error",
